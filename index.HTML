@@ -90,26 +90,21 @@
       <div id="resultado-trbd" style="margin-top:18px; font-size:15px; line-height:1.5;"></div>
     </div>
   </div>
-
+</body>
   <script>
     const abrirBtn = document.getElementById('abrir-calculadora');
     const modal = document.getElementById('modal-calculadora');
     const cerrarBtn = modal.querySelector('.cerrar-btn');
     abrirBtn.addEventListener('click', () => {
       modal.classList.add('active');
-      // Opcional: limpiar input y resultado cuando se abre
+
       document.getElementById('m2-modal').value = '';
       document.getElementById('resultado-trbd').innerHTML = '';
     });
     cerrarBtn.addEventListener('click', () => {
       modal.classList.remove('active');
     });
-    // También cerrar modal al hacer clic fuera del contenido
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.classList.remove('active');
-      }
-    });
+ 
 
     function calcularUrbanismoTRBD(m2) {
       m2 = parseFloat(m2);
@@ -134,7 +129,9 @@
     `;
     }
   </script>
-</body>
+
 </head>
+
+</html>
 
 </html>

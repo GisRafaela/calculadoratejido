@@ -3,11 +3,12 @@
 <head>
   </body>
   <style>
+    /*CALCULADORA 10-TEC 1*/
     /* Estilos del botón */
     #abrir-calculadora {
       padding: 10px 20px;
-      background-color: #5cb873;
-      color: white;
+      background-color: #006edd;
+      color: white;/*color de letra del boton abrir*/
       border: none;
       border-radius: 8px;
       cursor: pointer;
@@ -35,8 +36,8 @@
 
     /* Contenido del modal (tarjeta) */
     .modal-content {
-      background-color: #5cb873;
-      border: 3px solid #367f47;
+      background-color: #006edd;
+      border: 3px solid #002f5e;
       border-radius: 12px;
       padding: 20px;
       max-width: 400px;
@@ -54,14 +55,14 @@
       border: none;
       font-size: 22px;
       cursor: pointer;
-      color: #367f47;
+      color: #002f5e;/*color oscuro*/
       font-weight: bold;
     }
 
     /* Reusar estilos input y resultado */
     #resultado-trbd p {
-      background-color: #367f47;
-      border-left: 5px solid #5cb873;
+      background-color: #006edd;
+      border-left: 5px solid #002f5e;/*color oscuro*/
       padding: 8px 12px;
       border-radius: 5px;
       margin-bottom: 8px;
@@ -71,7 +72,7 @@
       width: 100%;
       padding: 8px;
       margin-top: 6px;
-      border: 2px solid #367f47;
+      border: 2px solid #002f5e;/*color oscuro*/
       border-radius: 6px;
       font-size: 16px;
       box-sizing: border-box;
@@ -79,16 +80,16 @@
   </style>
 
   <!-- Botón para abrir modal -->
-  <button id="abrir-calculadora">Abrir Calculadora 01-TRBD</button>
+  <button id="abrir-calculadora">Abrir Calculadora 10 - TEC</button>
 
   <!-- Modal -->
   <div id="modal-calculadora" class="modal">
     <div class="modal-content">
       <button class="cerrar-btn" aria-label="Cerrar">&times;</button>
-      <h3 style="color:#fffff; text-align:center; margin-bottom:12px;">Calculadora Urbanística – 01-Tejido TRBD</h3>
-      <label for="m2-modal" style="font-weight:600;">Superficie del terreno (m²):</label>
+      <h3 style="color:#ffffff; text-align:center; margin-bottom:12px;">Calculadora Urbanística</h3>
+      <label for="m2-modal" style="color:#ffffff; font-weight:600;">Superficie del terreno (m²):</label>
       <input id="m2-modal" type="number" min="0" placeholder="Ej: 700" oninput="calcularUrbanismoTRBD(this.value)" />
-      <div id="resultado-trbd" style="margin-top:18px; font-size:15px; line-height:1.5;"></div>
+      <div id="resultado-trbd" style="color:#ffffff; margin-top:18px; font-size:15px; line-height:1.5;"></div>
     </div>
   </div>
   </body>
@@ -112,10 +113,10 @@
           "<p>Ingrese una superficie válida.</p>";
         return;
       }
-      const FOS = 0.5;
-      const FOT = 1.0;
-      const PVEA = 0.7;
-      const Nofos = 1;
+      const FOS = 0.3;
+      const FOT = 0.5;
+      const PVEA = 0.5;/*porcenteja en decimal*/
+      const Nofos = 1;/*siempre 1*/
       const superficieCubierta = m2 * FOS;
       const superficieConstruible = m2 * FOT;
       const superficieLibre = (Nofos - FOS) * m2 * PVEA;
